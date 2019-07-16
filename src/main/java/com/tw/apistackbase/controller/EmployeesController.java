@@ -21,4 +21,16 @@ public class EmployeesController {
         acceptEmployees.add(employee);
         return acceptEmployees;
     }
+
+    @PutMapping
+    public List<Employee> modifyEmployee(@RequestBody Employee employee) {
+        List<Employee> returnEmployees = Employee.createTestEmployees();
+        for (Employee returnEmployee : returnEmployees) {
+            if(returnEmployee.getId() == employee.getId()) {
+                returnEmployees.remove(returnEmployee);
+                returnEmployees.add(employee);
+            }
+        }
+        return returnEmployees;
+    }
 }
