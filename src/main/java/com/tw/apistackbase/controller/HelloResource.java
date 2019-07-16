@@ -17,7 +17,7 @@ public class HelloResource {
 
     private final Logger log = Logger.getLogger(this.getClass().getName());
 
-    @GetMapping(path = "/{userName}", produces = {"application/json"})
+    @GetMapping(path = "/{userName}")
     public ResponseEntity<String> getAll(@PathVariable String userName) {
 
         return ResponseEntity.ok("Hello:" + userName);
