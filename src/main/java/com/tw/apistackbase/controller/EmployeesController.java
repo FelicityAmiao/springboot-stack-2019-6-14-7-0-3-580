@@ -10,6 +10,11 @@ import java.util.List;
 @RequestMapping("employees")
 public class EmployeesController {
 
+    @GetMapping
+    public List<Employee> getAllEmployees() {
+        return Employee.createTestEmployees();
+    }
+
     @PostMapping
     public List<Employee> addEmployee(@RequestBody Employee employee) {
         List<Employee> acceptEmployees = new ArrayList<>();

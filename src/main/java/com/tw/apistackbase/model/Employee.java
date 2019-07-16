@@ -41,6 +41,17 @@ public class Employee {
         this.gender = gender;
     }
 
+    public static List<Employee> createTestEmployees() {
+        List<Employee> employees = new ArrayList<>();
+        Employee employee = new Employee();
+        employee.setId(2);
+        employee.setName("Jerry");
+        employee.setAge(18);
+        employee.setGender("Male");
+        employees.add(employee);
+        return employees;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
